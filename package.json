@@ -11,8 +11,7 @@
     "server:dev": "ts-node-dev --respawn --transpile-only src/index.ts",
     "start:dev": "concurrently \"npm run client:dev\" \"npm run server:dev\"",
     "gen-env": "npx gen-env-types .env -o src/@types/env.d.ts -e .",
-    "heroku:postbuild:client": "cd client && npm install && npm run build",
-    "heroku-postbuild": "concurrently \"npm run build:prod\" \"npm run heroku:postbuild:client\""
+    "heroku-postbuild": "tsc && cd client && npm install && npm run build"
   },
   "keywords": [],
   "author": "",
