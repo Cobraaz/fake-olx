@@ -28,7 +28,15 @@ const AdvertisementCard = ({
         style={{ cursor: "pointer" }}
         onClick={() => history.push(`/advertisement/${advertisementId}`)}
       >
-        <CardImg alt="Card image cap" src={image} top width="100%" />
+        <CardImg
+          style={{
+            height: "300px",
+          }}
+          alt="Card image cap"
+          src={image}
+          top
+          width="100%"
+        />
         <CardBody>
           <CardTitle className="d-inline-block" tag="h5">
             {title}
