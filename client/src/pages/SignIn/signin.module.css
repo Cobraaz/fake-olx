@@ -1,0 +1,12 @@
+.signIn {
+  text-align: center;
+}
+
+.formWrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 40px;
+  border-radius: 10px;
+  box-shadow: 0 10px 50px #555;
+  background-color: #fff;
+}

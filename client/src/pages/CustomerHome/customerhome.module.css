@@ -1,0 +1,17 @@
+.noAdvertisment {
+  text-align: center;
+  font-size: 44px;
+  font-weight: bold;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.text {
+  font-size: xx-large;
+  font-weight: bold;
+  text-transform: uppercase;
+}

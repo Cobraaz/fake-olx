@@ -1,0 +1,22 @@
+.customNavbar {
+  width: 100%;
+  z-index: 100 !important;
+  padding: 25px;
+  background-color: #f82f0b !important;
+}
+
+.customNavbarBrand {
+  color: white;
+  font-size: 24px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.customLoginRegister {
+  color: white;
+  font-size: 18px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
