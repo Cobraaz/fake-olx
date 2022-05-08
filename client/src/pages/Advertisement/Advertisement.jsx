@@ -15,6 +15,25 @@ import { priceWithCommas } from "../../utils/helper.function";
 
 import styles from "./advertisement.module.css";
 
+const categoryArray = [
+  {
+    value: "car",
+    name: "Car",
+  },
+  {
+    value: "motorcycle",
+    name: "Motorcycle",
+  },
+  {
+    value: "house&apartment",
+    name: "House & Apartment",
+  },
+  {
+    value: "scooter",
+    name: "Scooter",
+  },
+];
+
 const Advertisement = () => {
   const { advertisementId } = useParams();
   const [advertisement, setAdvertisement] = useState({});
@@ -37,7 +56,12 @@ const Advertisement = () => {
       </div>
     );
 
-  const { title, image, description, price, createdAt } = advertisement;
+  const { title, image, description, price, createdAt, category } =
+    advertisement;
+
+  const categoryName = categoryArray.find(
+    ({ value }) => value === category
+  ).name;
 
   return (
     <div>
@@ -53,16 +77,24 @@ const Advertisement = () => {
               {title}
             </CardTitle>
             <CardSubtitle
-              className="mt-4 mb-5 text-muted"
+              className="d-inline-block mt-4 mb-5 text-muted"
               style={{ marginTop: "0.2rem" }}
               tag="h3"
             >
               ₹ {priceWithCommas(price)}
             </CardSubtitle>
+            <CardSubtitle
+              className="d-inline-block mt-4 mb-5 text-muted float-end"
+              style={{ marginTop: "0.2rem" }}
+              tag="h4"
+            >
+              CATEGORY: {categoryName}
+            </CardSubtitle>
             <hr />
             <CardText tag="p" className="mt-5">
               {description}
             </CardText>
+
             <CardSubtitle
               className="d-inline-block mb-2 text-muted float-end"
               style={{ marginTop: "0.2rem" }}

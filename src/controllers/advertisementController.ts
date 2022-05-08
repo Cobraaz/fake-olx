@@ -38,7 +38,9 @@ export const createAdvertisement = async (
 
 export const getAdvertisements = async (_: Request, res: Response) => {
   try {
-    const advertisements = await advertisementModel.find();
+    const advertisements = await advertisementModel
+      .find()
+      .sort([["createdAt", -1]]);
     return res.json({
       advertisements,
     });
@@ -66,9 +68,11 @@ export const getAdvertisementById = async (
 export const getAdvertisementsById = async (req: Request, res: Response) => {
   try {
     console.log(req.user.id);
-    const advertisements = await advertisementModel.find({
-      user: req.user.id,
-    });
+    const advertisements = await advertisementModel
+      .find({
+        user: req.user.id,
+      })
+      .sort([["createdAt", -1]]);
     return res.json({
       advertisements,
     });
