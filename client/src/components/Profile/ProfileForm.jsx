@@ -100,15 +100,15 @@ const ProfileForm = ({ user, token }) => {
         textAlign: "start",
       }}
     >
-      <div className="text-center">
-        <div className="mt-4">
+      <div>
+        <div className="mt-4 text-center">
           <img className={styles.profileImg} src={avatar} alt="Avatar" />
         </div>
-        <div className="mt-2">
-          <input
+        <div className="mt-2 mb-3">
+          <Input
             type="file"
             name="file"
-            className={styles.file_up}
+            id="image"
             accept="image/*"
             onChange={changeAvatar}
           />

@@ -130,12 +130,21 @@ export const profile = async (
   try {
     const { name, avatar, phone_no, password } = req.body;
 
-    const passwordHash = await bcrypt.hash(password, 12);
+    let user;
 
-    const user = await userModel.findOneAndUpdate(
-      { _id: req.user.id },
-      { name, avatar, phone_no, password: passwordHash }
-    );
+    if (password) {
+      const passwordHash = await bcrypt.hash(password, 12);
+
+      user = await userModel.findOneAndUpdate(
+        { _id: req.user.id },
+        { name, avatar, phone_no, password: passwordHash }
+      );
+    } else {
+      user = await userModel.findOneAndUpdate(
+        { _id: req.user.id },
+        { name, avatar, phone_no }
+      );
+    }
 
     if (!user)
       return res.status(400).json({ err: [{ msg: "Please login now!" }] });
