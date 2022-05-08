@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { validationResult } from "express-validator";
 import userModel, { IUserDocument } from "../models/userModel";
 import bcrypt from "bcryptjs";
-import { createToken, decodeToken } from "../utils/tokenHelper";
+import { createToken } from "../utils/tokenHelper";
 import { Types } from "mongoose";
 
 type LoginBody = Pick<IUserDocument, "email" | "password">;

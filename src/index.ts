@@ -1,5 +1,5 @@
 import "dotenv-safe/config";
-import express, { Request, Response } from "express";
+import express from "express";
 import { connectDB } from "./utils/connectDB";
 
 import authRoutes from "./routes/authRoutes";

@@ -36,7 +36,7 @@ export const createAdvertisement = async (
   }
 };
 
-export const getAdvertisements = async (req: Request, res: Response) => {
+export const getAdvertisements = async (_: Request, res: Response) => {
   try {
     const advertisements = await advertisementModel.find();
     return res.json({
