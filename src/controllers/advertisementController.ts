@@ -12,7 +12,7 @@ export const createAdvertisement = async (
     console.error(errors.array());
     return res.status(400).json({ err: errors.array() });
   }
-  console.log(req.body);
+
   const { image, title, description, price, category } = req.body;
 
   try {
@@ -67,7 +67,6 @@ export const getAdvertisementById = async (
 };
 export const getAdvertisementsById = async (req: Request, res: Response) => {
   try {
-    console.log(req.user.id);
     const advertisements = await advertisementModel
       .find({
         user: req.user.id,

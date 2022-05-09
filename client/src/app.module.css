@@ -1,3 +1,17 @@
 .marginTop {
   margin-top: 50px;
 }
+
+.allButFooter {
+  min-height: calc(100vh);
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

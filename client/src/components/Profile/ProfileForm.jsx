@@ -71,7 +71,7 @@ const ProfileForm = ({ user, token }) => {
       });
 
     let file;
-    console.log(e.target.files);
+
     file = await imageCompression(e.target.files[0], {
       maxSizeMB: 1,
       maxWidthOrHeight: 1920,
@@ -91,8 +91,6 @@ const ProfileForm = ({ user, token }) => {
     file = await toBase64(file);
     setAvatar(file);
   };
-
-  console.log(avatar);
 
   return (
     <div

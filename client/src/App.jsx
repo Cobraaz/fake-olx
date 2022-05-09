@@ -17,6 +17,7 @@ import PrivateRoute from "./components/Routing/PrivateRoutes";
 import CreateAdvertisement from "./pages/CreateAd/CreateAdvertisement";
 import Advertisement from "./pages/Advertisement/Advertisement";
 import CustomerHome from "./pages/CustomerHome/CustomerHome";
+import Footer from "./components/Footer/Footer";
 
 const App = () => {
   const { dispatch } = useContext(DataContext);
@@ -48,31 +49,34 @@ const App = () => {
   return (
     <>
       <Router>
-        <Header />
-        <ToastContainer />
-        <Container className={styles.marginTop}>
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route
-              exact
-              path="/advertisement/:advertisementId"
-              component={Advertisement}
-            />
-            <Route exact path="/signup" component={SignUp} />
-            <Route exact path="/signin" component={SignIn} />
-            <PrivateRoute exact path="/profile" component={Profile} />
-            <PrivateRoute
-              exact
-              path="/create-ad"
-              component={CreateAdvertisement}
-            />
-            <PrivateRoute
-              exact
-              path="/customer-home"
-              component={CustomerHome}
-            />
-          </Switch>
-        </Container>
+        <div className={styles.allButFooter}>
+          <Header />
+          <ToastContainer />
+          <Container className={styles.marginTop}>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route
+                exact
+                path="/advertisement/:advertisementId"
+                component={Advertisement}
+              />
+              <Route exact path="/signup" component={SignUp} />
+              <Route exact path="/signin" component={SignIn} />
+              <PrivateRoute exact path="/profile" component={Profile} />
+              <PrivateRoute
+                exact
+                path="/create-ad"
+                component={CreateAdvertisement}
+              />
+              <PrivateRoute
+                exact
+                path="/customer-home"
+                component={CustomerHome}
+              />
+            </Switch>
+          </Container>
+        </div>
+        <Footer />
       </Router>
     </>
   );

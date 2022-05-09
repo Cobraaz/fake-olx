@@ -15,25 +15,7 @@ import { postData } from "../../utils/fetchData";
 
 import imageCompression from "browser-image-compression";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
-
-const categoryArray = [
-  {
-    value: "car",
-    name: "Car",
-  },
-  {
-    value: "motorcycle",
-    name: "Motorcycle",
-  },
-  {
-    value: "house&apartment",
-    name: "House & Apartment",
-  },
-  {
-    value: "scooter",
-    name: "Scooter",
-  },
-];
+import { categoryArray } from "../../utils/helper.function";
 
 const CreateADForm = () => {
   const [image, setImage] = useState("");
@@ -49,7 +31,7 @@ const CreateADForm = () => {
       });
 
     let file;
-    console.log(e.target.files);
+
     file = await imageCompression(e.target.files[0], {
       maxSizeMB: 1,
       maxWidthOrHeight: 1920,
@@ -85,7 +67,7 @@ const CreateADForm = () => {
     onSubmit: async (values) => {
       if (!image) return toast.error("Image is required");
       const updatedValues = { ...values, image };
-      console.log({ ...values, image });
+
       const res = await postData("advertisement/create-ad", updatedValues);
       if (res.err) {
         return res.err.map(({ msg }) => toast.error(msg));
