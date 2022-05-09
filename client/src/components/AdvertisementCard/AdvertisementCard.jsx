@@ -38,7 +38,13 @@ const AdvertisementCard = ({
           width="100%"
         />
         <CardBody>
-          <CardTitle className="d-inline-block" tag="h5">
+          <CardTitle
+            className="d-inline-block"
+            style={{
+              textTransform: "capitalize",
+            }}
+            tag="h5"
+          >
             {title}
           </CardTitle>
           <CardSubtitle
@@ -49,7 +55,7 @@ const AdvertisementCard = ({
             ₹ {priceWithCommas(price)}
           </CardSubtitle>
           <hr />
-          <CardText>{description.split(" ", 12).join(" ")}...</CardText>
+          <CardText>{description.split(" ", 7).join(" ")}...</CardText>
           <CardSubtitle
             className="d-inline-block mb-2 text-muted float-end"
             style={{ marginTop: "0.2rem", fontSize: "12px" }}

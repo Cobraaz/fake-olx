@@ -54,7 +54,13 @@ const Advertisement = () => {
         </Col>
         <Col md={6} sm={12}>
           <CardBody>
-            <CardTitle className="mt-4" tag="h1">
+            <CardTitle
+              className="mt-4"
+              style={{
+                textTransform: "uppercase",
+              }}
+              tag="h1"
+            >
               {title}
             </CardTitle>
             <CardSubtitle
